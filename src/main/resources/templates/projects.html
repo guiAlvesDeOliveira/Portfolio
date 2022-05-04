@@ -20,9 +20,10 @@
     <div th:each="project : ${projects}">
         
         <div th:text="${project.name}">Name project</div>
+        
         <div>
-			<img th:src="@{download.jpg}" src="sources/"/>
-		</div>
+			<img alt="image" th:src="${project.imageUrl}"/></div>
+		
         <div th:text="${project.resume}">resume</div>
         <div th:text="${project.technologies}">technologies</div>
         <button onclick="location.href = '@{project.url}';" id="myButton" class="float-left submit-button" >Link</button>
