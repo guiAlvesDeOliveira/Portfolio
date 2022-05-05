@@ -17,15 +17,7 @@ public class Projects {
 	private String technologies;
 	private String url;
 	private String imageUrl;
-	
-	private byte[] image;
-	@Lob
-	public byte[] getImage() {
-		return image;
-	}
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
+
 	public Long getId() {
 		return id;
 	}

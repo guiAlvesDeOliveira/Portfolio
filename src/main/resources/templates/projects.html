@@ -8,7 +8,7 @@
     <title>| Projects</title>
 </head>
 
-<body class="bg-dark text-white" onload="onLoad()">
+<body class="bg-dark text-white">
     <div>
         <span>GuiAlves</span>
         <a href="/home">Home</a>
@@ -22,11 +22,12 @@
         <div th:text="${project.name}">Name project</div>
         
         <div>
-			<img alt="image" th:src="${project.imageUrl}"/></div>
+			<img alt="image" th:src="${project.imageUrl}" width = 20%/>
+		</div>
 		
         <div th:text="${project.resume}">resume</div>
         <div th:text="${project.technologies}">technologies</div>
-        <button onclick="location.href = '@{project.url}';" id="myButton" class="float-left submit-button" >Link</button>
+       	<a th:href="${project.url}">Link</a>
         
 
     </div>

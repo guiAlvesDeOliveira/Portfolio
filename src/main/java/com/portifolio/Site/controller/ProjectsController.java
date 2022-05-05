@@ -18,7 +18,6 @@ import com.portifolio.Site.repository.ProjectsRepository;
 @Controller
 public class ProjectsController {
 
-	private String caminhoImagens = "D:\\Códigos\\Portfolio\\src\\main\\resources\\static\\images";
 	
 	@Autowired
 	private ProjectsRepository repo;
@@ -30,13 +29,5 @@ public class ProjectsController {
 		return "projects";
 	}
 	
-	@GetMapping("/projects/showImage/{image}")
-	@ResponseBody
-	public byte[] showImage(@PathVariable("image") String image) throws IOException {
-		File imageArchive = new File(caminhoImagens + image);
-		if (image != null || image.trim().length() > 0) {
-			return Files.readAllBytes(imageArchive.toPath());
-		}
-		return null;
-	}
+
 }

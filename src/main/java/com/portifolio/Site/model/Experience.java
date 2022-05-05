@@ -17,6 +17,10 @@ public class Experience {
 	private String company;
 	private String office;
 	private String resume;
+		@NotNull
+	private boolean workThere;
+	private LocalDate workFrom;
+	private LocalDate workedUntil;
 	
 	public Long getId() {
 		return id;
@@ -60,9 +64,5 @@ public class Experience {
 	public void setWorkedUntil(LocalDate workedUntil) {
 		this.workedUntil = workedUntil;
 	}
-	@NotNull
-	private boolean workThere;
-	private LocalDate workFrom;
-	private LocalDate workedUntil;
-	
+
 }
