@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Admin</title>
+  </head>
+  <body>
+    <div class="card ms-5 mt-3" style="width: 80%">
+      <form th:action="@{/admin/newProject}" method="POST">
+        <h2 class="ms-2">Include New Project</h2>
+        <div class="ms-2">
+          <div class="mb-2">
+            <label for="Name" class="form-label">Project Name</label>
+            <input name="name" class="form-control" />
+          </div>
+          <div class="mb-2">
+            <label for="Url" class="form-label">Project url</label>
+            <input name="url" class="form-control" />
+          </div>
+          <div class="mb-2">
+            <label for="Resume" class="form-label">Project Resume</label>
+            <textarea name="resume" class="form-control"></textarea>
+          </div>
+          <div class="mb-2">
+            <label for="technologies" class="form-label"
+              >Used technologies</label
+            >
+            <input name="technologies" class="form-control" />
+          </div>
+          <div class="mb-2">
+            <label for="image" class="form-label">Base64 text image</label>
+            <textarea name="image" class="form-control"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-3 ms-2">
+          New Project
+        </button>
+      </form>
+    </div>
+
+    <div class="card ms-5 mt-3 mb-3" style="width: 80%">
+      <form th:action="@{/admin/newExperience}" method="POST">
+        <h2 class="ms-2">Include New Experience</h2>
+        <div class="ms-2">
+          <div class="mb-2">
+            <label for="Name" class="form-label">Experience company</label>
+            <input name="company" class="form-control" />
+          </div>
+          <div class="mb-2">
+            <label for="Url" class="form-label">Experience office</label>
+            <input name="office" class="form-control" />
+          </div>
+          <div class="mb-2">
+            <label for="Resume" class="form-label">Experience Resume</label>
+            <textarea name="resume" class="form-control"></textarea>
+          </div>
+          <div class="mb-2">
+            <label for="WorkFrom" class="form-label">Work from</label>
+            <input type="date" class="form-control" name="workFrom" />
+          </div>
+          <div class="mb-2">
+            <label for="WorkUntil" class="form-label">Work until</label>
+            <input type="date" class="form-control" name="workUntil" />
+          </div>
+          <div class="mb-2 ms-2">
+            <label for="WorkThere" class="form-label">WorkThere</label>
+            <div>
+              <input type="radio" name="workThere" value="true" />
+              <label for="true">True</label>
+            </div>
+            <div>
+              <input type="radio" name="workThere" value="false" />
+              <label for="false">False</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary mb-3 ms-2">New Experience</button>
+      </form>
+    </div>
+
+    <!-- <div class="card ms-5 mt-3 mb-3" style="width: 80%">
+        <form action="/admin/deleteProject">
+            <div th:each="project : ${projects}">
+                <div th:text="${project.name}">Name</div>
+            </div>
+        </form>
+    </div>
+
+    <div class="card ms-5 mt-3 mb-3" style="width: 80%">
+        <form action="/admin/deleteExperience">
+            <div th:each="experience : ${experiences}">
+                <label th:text="${experience.company}">company</label>
+                <input type="radio" th:value="${experience.company}" name="company"/>
+            </div>
+            <button type="submit" class="btn btn-secondary mb-3 ms-2">Delete</button>
+        </form>
+    </div> -->
+  </body>
+</html>

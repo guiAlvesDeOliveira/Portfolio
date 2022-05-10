@@ -5,27 +5,43 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style type="text/css">
+        body {
+            background-color: #000000;
+        }
+    </style>
     <title>| Experience</title>
 </head>
 
-<body class="bg-dark text-white">
+<body class="text-white">
 
-    <div>
-        <span>GuiAlves</span>
-        <a href="/home">Home</a>
-        <a href="/experience">Experience</a>
-        <a href="/projects">Projects</a>
-        <a href="/aboutMe">About Me</a>
+    <div class="mb-3 p-3 d-flex justify-content-between">
+        <div>
+			<span><a class="text-decoration-none fs-4 text-info" href="/home">GuiAlves</a></span>
+        </div>
+        <div>
+            <a href="/home" class="text-light text-decoration-none fs-5 me-2">Home</a>
+            <a href="/experience" class="text-light text-decoration-none fs-5 me-2">Experience</a>
+            <a href="/projects" class="text-light text-decoration-none fs-5 me-2">Projects</a>
+            <a href="/aboutMe" class="text-light text-decoration-none fs-5 me-2">About Me</a>
+        </div>
     </div>
 
-    <div th:each="experience : ${experiences}">
-        <div th:text="${experience.company}">Name project</div>
-        <div th:text="${experience.office}">office</div>
-        <div th:text="${experience.resume}">resume</div>
-        <div th:text="${experience.workFrom}">date start work</div>
-    </div>
+	<div class="container">	
+	   <div th:each="experience : ${experiences}" class="row border-start border-info border-3 mb-3">
+	       <div th:text="${experience.company}" class="col fs-2">Name project</div>
+		   	<div class="col">
+		       <div th:text="${experience.office}" class="fs-4 text-info">office</div>
+		       <div th:text="${experience.resume}">resume</div>
+		       <div th:text="${experience.workFrom}">date start work</div>
+		       <div th:if="${experience.workThere == true}" th:text="@{Still work here}"></div>
+		       <div th:if="${experience.workThere == false}" th:text="${experience.workedUntil}">
+		       		
+		       </div>
+		    </div>
+	   </div>
+	</div>
 
- 
 
 </body>
 
